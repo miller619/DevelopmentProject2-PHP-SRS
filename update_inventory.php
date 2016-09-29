@@ -3,6 +3,29 @@
 
 <!Doctype html>
 <html lang="en">
+<link rel="stylesheet" type="text/css" href="styles.css"/>
+<div class="bg">
+<header>
+       <nav>
+      <ul>
+        <li class="tours"><a href="#">Inventory</a>
+          <ul>
+            <li><a href="update_inventory.php">Add</a></li>
+            <li><a href="">Remove</a></li>
+            <li><a href="display_inventory.php">View</a></li>
+          </ul>
+        </li>
+        <li class="aboutus"><a href="#">Sales</a>
+          <ul>
+            <li><a href="update_sales.php">Add</a></li>
+            <li><a href="">Remove</a></li>
+            <li><a href="display_sales.php">View</a></li>
+          </ul>
+        </li>
+		<li class="Disclaimer"><a href="disclaimer.html">Disclaimer</a></li>
+		</ul>
+    </nav>
+	</header>
 
 <body>
 		<div class="page">
@@ -38,3 +61,7 @@
 		<hr/>
 	</div>
 </body>
+<footer>
+       <div id="Footer"> Copyright &copy; 2016  All rights reserved. VAT no. IT 0146971728 </div> 
+</footer>
+</html>
