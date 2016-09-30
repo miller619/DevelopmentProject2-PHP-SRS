@@ -32,7 +32,7 @@
 		
 		<?php			
 			//connection information
-			require_once ("database_inventory.php");
+			require_once ("database/database_inventory.php");
 			
 			//check if the connection is successful
 			$conn = @mysqli_connect(
