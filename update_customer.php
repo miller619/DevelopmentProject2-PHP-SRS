@@ -9,19 +9,19 @@
         <li class="tours"><a href="index.php">Inventory</a>
           <ul>
             <li><a href="update_inventory.php">Add</a></li>
-            <li><a href="">Remove</a></li>
+            
           </ul>
         </li>
         <li class="aboutus"><a href="display_sales.php">Sales</a>
           <ul>
             <li><a href="update_sales.php">Add</a></li>
-            <li><a href="">Remove</a></li>
+           
           </ul>
         </li>
 			<li class="aboutus"><a href="display_customer.php">Customer</a>
           <ul>
             <li><a href="update_customer.php">Add</a></li>
-            <li><a href="">Remove</a></li>
+           
           </ul>
         </li>
 		<li class="Disclaimer"><a href="disclaimer.html">Disclaimer</a></li>
