@@ -31,7 +31,7 @@
 
 	<body>
 		<hr/>
-			<h1>Inventory</h1>
+			<h1 align="center" >Inventory</h1>
 		<hr/>
 
 		<?php
@@ -52,7 +52,8 @@
 				}else{
 					//display retrivefd record
 					
-					echo"<table border='1'>";
+					echo"<table border='1' align='center'>";
+					echo"<table border='1' align='center'>";
 					echo"<tr>"
 						."<th scope=\"col\">Item ID</th>"
 						."<th scope=\"col\">Item Name</th>"
@@ -85,6 +86,8 @@
 
 		?>
 		</br>
+		</br>
+		</hr>
 		<h2> Search </h2>
 		<form name="searchform" method="post" action="searchresults.php"/>
 				<input name="search" type="text" size="40" maxlength="50"/>
