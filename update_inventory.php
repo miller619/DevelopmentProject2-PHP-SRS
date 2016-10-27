@@ -61,8 +61,6 @@
 				<input type="submit" value="Submit Query" />
 				<input type="reset" value="Reset"/>
 			</p>
-			
-			
 		</form>
 		<hr/>
 	</div>
