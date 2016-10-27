@@ -61,16 +61,7 @@
 				<input type="submit" value="Submit Query" />
 				<input type="reset" value="Reset"/>
 			</p>
-			$ItemID = iID;
-			$checkItemID = mysql_query("SELECT iID FROM UpdateInventory WHERE iID = $ItemID);
-			if(!checkItemID){
-			 echo "Item Added";
-			}
-			if{mysql_num_rows($checkItemID)>0){
-			echo "Item Added ALready Exists";
-			$ItemID = mysql_fecth_array($ItemID);
-			print_r($iID);
-			}
+			
 			
 		</form>
 		<hr/>
