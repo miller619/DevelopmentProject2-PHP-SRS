@@ -37,30 +37,47 @@
 		
 		<h1>Enter Details of new item</h1>
 		<!-- <form method="post" name="contactForm" action="http://mercury.ict.swin.edu.au/it000000/formtest.php"> -->
-		<form id="inventoryForm" action="submit_inventory.php" method="post" onsubmit="return validate(this);" >
-			<fieldset>
+				<form id="myform"  action="submit_inventory.php" method="post">
+		<fieldset>
 				<legend>Update Inventory</legend>
-				<p>
-					<label>ItemID*: <input type="text" name="iID" id="iID" size="50"/></label>
-					<span id="queryID" class="error">Must Enter name../..can contain alphabet or number../..Cannot be more than 50 charecters</span>
-				</p>
-				<p>
-					<label>ItemName*": <input type="text" name="name" maxlength="40" size="40"/></label>
-					<span id="queryName" class="error">Must fill name</span>
-				</p>
-				<p>
-					<label>ItemCategory*: <input type="text" name="category" maxlength="40" size="40"/></label>
-					<span id="queryCat" class="error">Must fill category</span>
-				</p>
-				<p>
-					<label>ItemQuantity*: <input type="number" name="quantity" maxlength="16" size="16" placeholder="digits only"/></label>
-					<span id="queryQuan" class="error">Must fill quantity</span>
-				</p>
-			</fieldset>
-			<p>
-				<input type="submit" value="Submit Query" />
-				<input type="reset" value="Reset"/>
-			</p>
+			<table>
+				<tr>
+					<td > Item ID</td>
+					<td>
+					<input type="text" name="itemID" id="itemID" value=""placeholder="Enter ID"/>						
+					</td>
+				</tr>
+				<tr>
+					<td > Item Name</td>
+					<td><input type="text"   id="itemName" name="itemName" placeholder="Enter Item Name"/></td>
+				</tr>
+				<tr>
+					<td >Item Category</td>
+					<td><Select id="itemCategory" name="itemCategory" type="text"  maxlength="" placeholder="Enter Item Category">
+					<option> Medicine</option>
+					<option>ABC</option>
+					<option>XYZ</option>
+					</Select></td>
+				</tr>
+				<tr>
+					<td >Item Price</td>
+					<td><input id="itemPrice"  name="itemPrice" type="text"  maxlength="" placeholder="Enter Item Price"></td>
+				</tr>
+				<tr>
+					<td >Item Quantity</td>
+					<td><input id="itemQuantity"  name="itemQuantity" type="text"  maxlength="" placeholder="Enter Item Quantity"></td></td>
+				</tr>
+				
+						</table>
+					</fieldset>
+				</td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Submit"></></td>
+					<td><input type="reset" value="Reset"/></td>
+				</tr>
+			</table>
+			</form>
 			
 			
 		</form>

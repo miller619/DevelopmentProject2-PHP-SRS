@@ -69,6 +69,7 @@
 						."<th scope=\"col\">Item Name</th>"
 						."<th scope=\"col\">Item Category</th>"
 						."<th scope=\"col\">Item Quantity</th>"
+						."<th scope=\"col\">Item Price</th>"
 						."<th scope=\"col\">Delete</th>"
 						."</tr>";
 
@@ -80,6 +81,7 @@
 							echo"<td>", $row["itemName"],"</td>";
 							echo"<td>", $row["itemCategory"],"</td>";
 							echo"<td>", $row["itemQuantity"],"</td>";
+							echo"<td>", $row["itemPrice"],"</td>";
 							?>
 							<td>
 							<a onclick="return deleletconfig()" href="itemDelete.php?id=<?php echo $row['itemID'];?>">Delete</a>
