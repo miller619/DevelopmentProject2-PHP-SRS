@@ -26,6 +26,16 @@
         </li>
 		<li class="Disclaimer"><a href="disclaimer.html">Disclaimer</a></li>
 		</ul>
+	       	<script>
+			function deleletconfig(){
+
+				var del=confirm("Are you sure you want to delete this record?");
+				if (del==true){
+				   alert ("record deleted")
+				}
+				return del;
+			}
+		</script>
     </nav>
 	</header>
 
@@ -72,7 +82,7 @@
 							echo"<td>", $row["itemQuantity"],"</td>";
 							?>
 							<td>
-								<a href="itemDelete.php?id=<?php echo $row['itemID'];?>">Delete</a>
+							<a onclick="return deleletconfig()" href="itemDelete.php?id=<?php echo $row['itemID'];?>">Delete</a>
 							</td>
 							
 							<?php echo"</tr>";
