@@ -6,7 +6,7 @@
 <header>
        <nav>
       <ul>
-        <li class=""><a href="index.php">Inventory</a>
+        <li class=""><a href="Home.php">Inventory</a>
           <ul>
             <li><a href="update_inventory.php">Add</a></li>
            
