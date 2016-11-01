@@ -40,7 +40,7 @@
 
 
      include_once ("database/database_inventory.php");
-		if(isset($_POST['itemID']) && $_POST['itemName']!="" && isset($_POST['itemCategory']) && isset($_POST['itemPrice']) && $_POST['itemQuantity']!="")
+		if(isset($_POST['itemID']) && $_POST['itemName']!="" && isset($_POST['itemCategory']) && isset($_POST['itemPrice']) && $_POST['itemQuantity']!="0")
 		{$check = mysqli_query($connect_mysqli,"select * from inventory where itemID='".$_POST['itemID']."'");
 				$checkrows= mysqli_num_rows($check);
 				
