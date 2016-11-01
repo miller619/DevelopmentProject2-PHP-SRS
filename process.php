@@ -24,6 +24,15 @@
 	
 	if($row['username'] == $username && $row['password'] == $password && $row['user'] == '1' || $row['user'] == '2')
 	{
+		session_start();
+		if($row['user'] == '1' )
+		{
+		$_SESSION['user']= '1';
+		}
+		else
+		{
+			$_SESSION['user']= '2';
+		}
 		//echo "Login success!!!";
 		include 'Home.php';
 	}
