@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="styles.css"/>
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 <div class="bg">
 <header>
        <nav>
@@ -39,55 +40,25 @@
 
 
      include_once ("database/database_inventory.php");
-     $fields = [];
-     $sanitizedData = [];
-
-      // Fetch set fields
-    	$fields[] = (isset($_POST['iID'])) ? $_POST["iID"] : null;
-			$fields[] = (isset($_POST['name']))? $_POST["name"] : null;
-			$fields[] = (isset($_POST['category']))? $_POST["category"] : null;
-			$fields[] = (isset($_POST['quantity']))? $_POST["quantity"] : null;
-
-      foreach ($fields as $key => $value) {
-        if ($value == null){
-          echo "Notice: Please fill in the fields";
-           return false;
-        }
-      }
-
-      // sanitizes field data  and return clean data
-      function sanitizeFields($fields,$con){
-        $data = [];
-        foreach ($fields as $key => $value) {
-          mysqli_escape_string($con, $value);
-          strip_tags($value);
-          trim($value);
-          $data[] = $value;
-        }
-
-        return $data;
-      }
-
-      // Fetch sanitized data
-      $sanitizedData = sanitizeFields($fields,$connect_mysqli);
-
-			  //select table
-				$sql_table = "inventory";
-
-				//set sql command to add data to the table
-				$query = "insert into $sql_table (itemID, itemName, itemCategory, itemQuantity)
-							values ('$sanitizedData[0]', '$sanitizedData[1]', '$sanitizedData[2]', '$sanitizedData[3]')";
-
-				$result = mysqli_query($connect_mysqli, $query);
-				$result = $result + 1;
-				//check if execution was successfull
-				if (!$result){
-					echo"<p class=\"wrong\">something is wrong with", $query,"</p>";
-				}else{
-					echo "<p class=\"OK\">Successfully added new Item</p>";
-				}
-
-        mysqli_close($connect_mysqli);
+		if(isset($_POST['itemID']) && $_POST['itemName']!="" && isset($_POST['itemCategory']) && isset($_POST['itemPrice']) && $_POST['itemQuantity']!="")
+		{$check = mysqli_query($connect_mysqli,"select * from inventory where itemID='".$_POST['itemID']."'");
+				$checkrows= mysqli_num_rows($check);
+				
+				 if($checkrows>0) 
+				 {
+						?> "<script>alert("ID exists");</script>"; <?php
+				 } 	else{
+		 $query = "insert into inventory (itemID, itemName, itemCategory, itemPrice, itemQuantity)values ('".$_POST['itemID']."','".$_POST['itemName']."','".$_POST['itemCategory']."','".$_POST['itemPrice']."','".$_POST['itemQuantity']."')";
+	
+		mysqli_query($connect_mysqli, $query);
+		
+		echo "Data successfully saved";
+		}}else{
+			echo "Missing required data";
+		}
+			 
+					 
+		
 			?>
 	</body>
 <footer>
