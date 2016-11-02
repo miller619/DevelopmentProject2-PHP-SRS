@@ -1,0 +1,31 @@
+<?php
+    // optional where query
+    // filename for export
+    $filename = 'upload/'.strtotime("now").'.csv';
+
+    // Database connecten voor alle services
+    include_once ("database/database_inventory.php");
+
+    $csv_export = '';
+
+    $query = mysqli_query("SELECT * FROM sales");
+    $field = mysqli_num_fields($query);
+
+    // create line with field names
+    for($i = 0; $i < $field; $i++) {
+      $csv_export.= mysqli_field_name($query,$i).';';
+    }
+    $csv_export.= '';
+    while($row = mysqli_fetch_array($query)) {
+      // create line with field values
+      for($i = 0; $i < $field; $i++) {
+        $csv_export.= '"'.$row[mysqli_field_name($query,$i)].'";';
+      } 
+      $csv_export.= ''; 
+    }
+
+    // Export the data and prompt a csv file for download
+    header("Content-type: text/x-csv");
+    header("Content-Disposition: attachment; filename=".$csv_fileName."");
+    echo($csv_export);
+?>
