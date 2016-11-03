@@ -16,7 +16,9 @@
       
     $result = mysqli_query($connect_mysqli, $query);
 
-    $fp = fopen('upload/sales.csv', 'w');
+    $filename = 'report/'.strtotime("now").'.csv';
+
+    $fp = fopen($filename, 'w');
 
     while($row = mysqli_fetch_assoc($result))
     {
