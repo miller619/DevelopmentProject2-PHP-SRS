@@ -1,6 +1,9 @@
 <?php
+session_start();
+?>
+<?php
 
-    
+   
 	//Get values pass from form in login.php flie
 	$username = $_POST['user'];
 	$password = $_POST['pass'];
@@ -23,10 +26,11 @@
 	$row = mysql_fetch_array($result);
 	
 	if($row['username'] == $username && $row['password'] == $password && $row['user'] == '1' || $row['user'] == '2')
-	{
-		session_start();
+	{	
+		
 		if($row['user'] == '1' )
 		{
+
 		$_SESSION['user']= '1';
 		}
 		else
@@ -40,6 +44,5 @@
 	{
 		echo "login fail!!";
 	}
-
 	
 ?>

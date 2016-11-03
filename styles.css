@@ -149,14 +149,15 @@ h4 {
 ***************************************************/
 
 footer {
-	position: relative;
+position: absolute ;
+position:fixed;
 	height: 125px;
 	clear: both;
 	width: 100%;
 	background-position: left top;
 	background-repeat: repeat-x;
 	margin-bottom: 0;
-	background-color: black;
+	background-color: black
 	
 }
 

@@ -1,7 +1,8 @@
 <!--home page displaying the inventory-->
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
-
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="styles.css"/>
 <div class="bg">
@@ -71,8 +72,15 @@
 						."<th scope=\"col\">Item Name</th>"
 						."<th scope=\"col\">Item Category</th>"
 						."<th scope=\"col\">Item Quantity</th>"
-						."<th scope=\"col\">Delete</th>"
-						."</tr>";
+						."<th scope=\"col\">Item Price</th>";
+						 if($_SESSION['user'] == '1')
+						 {
+						echo"<th scope=\"col\">Delete</th>";
+					}else
+					{
+
+					}
+						echo"</tr>";
 
 						//loop through the database/database_inventory
 						while ($row = mysqli_fetch_assoc($result))
@@ -82,11 +90,11 @@
 							echo"<td>", $row["itemName"],"</td>";
 							echo"<td>", $row["itemCategory"],"</td>";
 							echo"<td>", $row["itemQuantity"],"</td>";
-							
+							echo"<td>", $row["itemPrice"],"</td>";
 							?>
 							
 							<?php 
-							session_start();
+							
 						
 						 if($_SESSION['user'] == '1')
 						 {
@@ -97,13 +105,10 @@
 						 }
 						 else
 						 {
-							echo '<td> u cnt delete
-							</td>';
+							
 						 }
 						
 							?>
-							
-							
 							
 							<?php echo"</tr>";
 						}
