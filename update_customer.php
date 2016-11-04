@@ -25,6 +25,7 @@
           </ul>
         </li>
 		<li class="Disclaimer"><a href="disclaimer.html">Disclaimer</a></li>
+		<li class=""><a href="#">Log out</a></li>
 		</ul>
     </nav>
 	</header>
@@ -35,30 +36,35 @@
 		
 		<h1>Enter Details of new item</h1>
 		<!-- <form method="post" name="contactForm" action="http://mercury.ict.swin.edu.au/it000000/formtest.php"> -->
-		<form id="inventoryForm" action="submit_customer.php" method="post" onsubmit="return validate(this);" >
+		<form id="myform"  action="submit_customer.php" method="post">
 			<fieldset>
-				<legend>Update Inventory</legend>
-				<p>
-					<label>CustomerID*: <input type="text" name="cID" id="cID" size="50"/></label>
-					<span id="queryID" class="error"></span>
-				</p>
-				<p>
-					<label>Customer Name*": <input type="text" name="name" maxlength="40" size="40"/></label>
-					<span id="queryName" class="error">Must fill name</span>
-				</p>
-				<p>
-					<label>Customer Email*: <input type="text" name="email" maxlength="40" size="40"/></label>
-					<span id="queryEmail" class="error">Must fill email</span>
-				</p>
-				<p>
-					<label>Customer Order*: <input type="text" name="order" maxlength="16" size="16"/></label>
-					<span id="queryOrder" class="error">Must fill order name</span>
-				</p>
-			</fieldset>
-			<p>
+				<legend>Add Customer</legend>
+			
+				<table>
+				<tr>
+					<td > CustomerID</td>
+					<td>
+					<input type="text" name="cID" id="cID" placeholder="Enter ID"/>						
+					</td>
+				</tr>
+				<tr>
+					<td > Customer Name</td>
+					<td><input type="text" name="name" maxlength="40"  placeholder="Enter Customer Name"/></td>
+				</tr>
+				<tr>
+					<td >Email</td>
+					<td><input type="text" name="email" maxlength="40" placeholder="Enter Item Price"></td>
+				</tr>
+				<tr>
+					<td >Order</td>
+					<td><<input type="text" name="order"   maxlength="" placeholder="Enter customer order"></td></td>
+				</tr>
+				
+						</table> </fieldset>
+			
 				<input type="submit" value="Submit Query" />
 				<input type="reset" value="Reset"/>
-			</p>
+			
 		</form>
 		<hr/>
 	</div>

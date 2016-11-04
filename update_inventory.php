@@ -27,6 +27,7 @@
           </ul>
         </li>
 		<li class="Disclaimer"><a href="disclaimer.html">Disclaimer</a></li>
+		<li class=""><a href="#">Log out</a></li>
 		</ul>
     </nav>
 	</header>

@@ -13,6 +13,7 @@ html, body, div, span, h1, h2, h3, h4, p, ol, ul, li, form, label, legend, capti
 }
 
 
+
 /***************************************************
 			      Global styles
 ***************************************************/
@@ -149,25 +150,17 @@ h4 {
 ***************************************************/
 
 footer {
-	position: bottom;
-	position: fixed;
-	height: 100px;
-	bottom :0;
+position: absolute ;
+position:fixed;
+	height: 125px;
 	clear: both;
 	width: 100%;
-	height: 100%;
-	background-position:center-right;
+	background-position: left top;
+	background-repeat: repeat-x;
 	margin-bottom: 0;
-	background-color: black;
+	background-color: black
 	
 }
-footer, push{
-	height:100px;
-}
-
- 
-
-
 
 
 

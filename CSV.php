@@ -10,22 +10,30 @@
     //$result = mysqli_query($connection, $sql) or die("Selection Error " . mysqli_error($connection));
 
     $sql_table = "sales";
-      
-    $query = "SELECT inventory.itemID,inventory.itemName,inventory.itemPrice, sales.date, sales.time, inventory.itemCategory,sales.itemId, sales.SalesID, sales.itemQuantity FROM inventory INNER JOIN sales ON sales.itemID = inventory.itemID";
+		
+	if(isset($_POST['dateinput1']) && $_POST['dateinput2']!=""){
+	
+    $query = "SELECT inventory.itemID,inventory.itemName,inventory.itemPrice, sales.date, sales.time, inventory.itemCategory, sales.SalesID, sales.itemQuantity FROM inventory INNER JOIN sales ON sales.itemID = inventory.itemID WHERE sales.date BETWEEN '".$_POST['dateinput1']."' AND '".$_POST['dateinput2']."'";
       
       
     $result = mysqli_query($connect_mysqli, $query);
 
     $filename = 'report/'.strtotime("now").'.csv';
-
-    $fp = fopen($filename, 'w');
+	$fp = fopen($filename, 'w');
+	fputcsv ($fp, array('Item ID', 'Item Name', 'Item Price', 'Sales Date', 'Sales time', 'Item category', 'Sales Id', 'Sales Quantity'));
 
     while($row = mysqli_fetch_assoc($result))
     {
-        fputcsv($fp, $row);
+fputcsv($fp, $row);
+	
     }
+	fclose($fp);
+	}else{
+		echo "Please select date";
+	}
+		
     
-    fclose($fp);
+    
 
     //close the db connection
     mysqli_close($connect_mysqli);
@@ -57,13 +65,14 @@
           </ul>
         </li>
     <li class="Disclaimer"><a href="disclaimer.html">Disclaimer</a></li>
+	<li class=""><a href="logout.php">Log out</a></li>
     </ul>
     </nav>
   </header>
 
   <body>
       <h1>CSV report generated</h1>
-      <p>check upload folder for the file</p>
+      <p>check report folder for the file</p>
   </body>
 <footer>
        <div id="Footer"> Copyright &copy; 2016  All rights reserved. VAT no. IT 0146971728 </div> 
